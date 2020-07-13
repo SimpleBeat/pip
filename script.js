@@ -16,5 +16,15 @@ async function selectMediaStream() {
     }
 }
 
+button.addEventListener('click', async () => {
+    // Disable clicked button
+    button.disabled = true
+    // Start PIP
+    await videoElement.requestPictureInPicture()
+    // Reset button
+    button.disabled = false
+    
+})
+
 // On load
 selectMediaStream()
